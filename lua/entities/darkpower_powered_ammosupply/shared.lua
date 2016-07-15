@@ -1,0 +1,9 @@
+ENT.Type = "anim"
+ENT.Base = "darkpower_powered_base"
+ENT.PrintName = "Ammo Station"
+ENT.Spawnable = true
+ENT.power_usage = 3
+ENT.xoffset = -100
+ENT.yoffset = -125
+ENT.set_name = "Ammo Station"
+ENT.Category = "Darkpower"

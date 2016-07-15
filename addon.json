@@ -1,0 +1,16 @@
+{
+    "description": "Description",
+    "ignore": [
+        "*.psd",
+        "*.vcproj",
+        "*.svn*"
+    ],
+    "logo": "C:/Users/Keefer/Desktop/scriptfodder/darkpower.jpg",
+    "tags": [
+        "roleplay",
+        "fun"
+    ],
+    "title": "DarkPower: A DarkRP Energy Mod",
+    "type": "tool",
+    "workshopid": 724780332
+}

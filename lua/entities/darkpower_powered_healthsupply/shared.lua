@@ -1,0 +1,9 @@
+ENT.Type = "anim"
+ENT.Base = "darkpower_powered_base"
+ENT.PrintName = "Health Station"
+ENT.Spawnable = true
+ENT.power_usage = 1
+ENT.xoffset = -100
+ENT.yoffset = -125
+ENT.set_name = "Health Station"
+ENT.Category = "Darkpower"

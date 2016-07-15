@@ -1,0 +1,9 @@
+ENT.Type = "anim"
+ENT.Base = "darkpower_generator_base"
+ENT.PrintName = "Small Generator"
+ENT.Spawnable = true
+ENT.maxpowered = 3
+ENT.power_radius = 200
+ENT.Category = "Darkpower"
+ENT.xoffset = -100
+ENT.yoffset = -100

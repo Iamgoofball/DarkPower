@@ -7,6 +7,8 @@ ENT.power_radius = 200
 ENT.xoffset = -100
 ENT.yoffset = -100
 ENT.Category = "Darkpower"
+ENT.isdarkgenerator = true
+
 function ENT:SetupDataTables()
     self:NetworkVar("Int", 0, "MaxPowered")
 	self:NetworkVar("Int", 1, "Powering")

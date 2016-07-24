@@ -1,65 +1,12 @@
 include("shared.lua")
 
-surface.CreateFont( "Power2", {
-	font = "Segoe UI Light",
-	extended = false,
-	size = 120,
-	weight = 500,
-	blursize = 0,
-	scanlines = 0,
-	antialias = true,
-	underline = false,
-	italic = false,
-	strikeout = false,
-	symbol = false,
-	rotary = false,
-	shadow = false,
-	additive = false,
-	outline = false,
-} )
-
-surface.CreateFont( "Power", {
-	font = "Segoe UI Light",
-	extended = false,
-	size = 96,
-	weight = 500,
-	blursize = 0,
-	scanlines = 0,
-	antialias = true,
-	underline = false,
-	italic = false,
-	strikeout = false,
-	symbol = false,
-	rotary = false,
-	shadow = false,
-	additive = false,
-	outline = false,
-} )
-
-surface.CreateFont( "Power3", {
-	font = "Segoe UI Light",
-	extended = false,
-	size = 48,
-	weight = 500,
-	blursize = 0,
-	scanlines = 0,
-	antialias = true,
-	underline = false,
-	italic = false,
-	strikeout = false,
-	symbol = false,
-	rotary = false,
-	shadow = false,
-	additive = false,
-	outline = false,
-} )
-
 function ENT:Draw()
 	self:DrawModel()
-	if halo.RenderedEntity()~=self then self:DrawGeneratorHUD() end
+	self:DrawGeneratorHUD()
 end
 
 function ENT:DrawGeneratorHUD()
+	if halo.RenderedEntity()==self then return end
 	local multiplier = 4
 	local dist = self:GetPos():Distance(EyePos())
 	local dist_calc = dist / 700
@@ -89,26 +36,3 @@ end
 
 function ENT:Think()
 end
-
-hook.Add( "PreDrawHalos", "hooksareshitandsoami", function()
-	local fuckmylife = {}
-	local eye = LocalPlayer():GetEyeTrace()
-	if IsValid(eye.Entity) and string.find(eye.Entity:GetClass(),"darkpower_generator") then
-		for k, v in pairs(ents.FindByClass("darkpower_powered_*")) do
-			if(IsValid(v)) then
-				if v:GetGenerator() == eye.Entity and v:GetPowered() == true then
-					table.insert(fuckmylife, v)
-				end
-			end
-		end
-	end
-	halo.Add( fuckmylife, Color(0, 0, 0), 5, 5, 2, true, false )
-	local fuckthisshit = {}
-	local eye = LocalPlayer():GetEyeTrace()
-	if IsValid(eye.Entity) and string.find(eye.Entity:GetClass(),"darkpower_powered") then
-		if IsValid(eye.Entity:GetGenerator()) then
-			table.insert(fuckthisshit, eye.Entity:GetGenerator())
-		end
-	end
-	halo.Add( fuckthisshit, Color(241, 196, 15), 5, 5, 2, true, false )
-end )

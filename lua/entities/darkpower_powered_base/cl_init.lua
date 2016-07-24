@@ -1,11 +1,12 @@
 include("shared.lua")
 
 function ENT:Draw()
-    self:DrawModel()
+	self:DrawModel()
 	self:DrawPowerHUD()
 end
 
 function ENT:DrawPowerHUD()
+	if halo.RenderedEntity()==self then return end
 	local final_angle = EyeAngles():Up():Angle()
 	final_angle:RotateAroundAxis(EyeAngles():Up(), 360)
 	final_angle:RotateAroundAxis(EyeAngles():Forward(), 90)

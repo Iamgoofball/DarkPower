@@ -7,6 +7,7 @@ ENT.xoffset = -100
 ENT.yoffset = -200
 ENT.set_name = "Ent Name"
 ENT.Category = "Darkpower"
+ENT.isdarkpowered = true
 
 function ENT:SetupDataTables()
 	self:NetworkVar("Bool", 0, "Powered")

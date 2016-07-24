@@ -55,8 +55,8 @@ surface.CreateFont( "Power3", {
 } )
 
 function ENT:Draw()
-    self:DrawModel()
-	self:DrawGeneratorHUD()
+	self:DrawModel()
+	if halo.RenderedEntity()~=self then self:DrawGeneratorHUD() end
 end
 
 function ENT:DrawGeneratorHUD()
